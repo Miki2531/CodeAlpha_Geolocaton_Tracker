@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Details</title>
+    <!-- Leaflet CSS for map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <style>
+        #mapid { height: 400px; }
+    </style>
+</head>
+<body>
+    <h1>Phone Details</h1>
+    <p><strong>Location:</strong> {{ location }}</p>
+    <p><strong>Service Provider:</strong> {{ provider_name }}</p>
+    
+    <!-- Display Map -->
+    <div id="mapid"></div>
+
+    <!-- Leaflet JS for map -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('mapid').setView([10.2116702, 38.6521203], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        L.marker([{ lat }, { lng }]).addTo(map)
+            .bindPopup("{{ location }}").openPopup();
+    </script>
+</body>
+</html>
