@@ -21,7 +21,7 @@
     <!-- Leaflet JS for map -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-        var map = L.map('mapid').setView([10.2116702, 38.6521203], 13);
+        var map = L.map('mapid').setView([{ lat }, { lng }], 13);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
