@@ -1,1 +1,2 @@
 # CodeAlpha_Geolocaton_Tracker
+Geolocation Tracker is the process of determinig the physical location of device, either via GPS, cellulat network, Wi-Fi system, Blutooth signal, phone number and IP address tracking. This a small project focus on tracking a person based on the perosn phone number using the python librariy #Phonenumbers and #geocoder API key.

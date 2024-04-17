@@ -19,20 +19,28 @@ def phone_number(request):
     geocoder_opencage = OpenCageGeocode(key)
     query = str(location)
     results = geocoder_opencage.geocode(query)
+    print(results[0]['components']['continent'])
+    
 
 
     lat = results[0]['geometry']['lat']
     lng = results[0]['geometry']['lng']
-    print(lat, lng)
+    continent = results[0]['components']['continent']
+    timezone = results[0]['annotations']['timezone']['name']
+    callingcode = results[0]['annotations']['callingcode']
+    
 
-    myMap = folium.Map(location=[lat, lng], zoom_start=9)
-    folium.Marker([lat, lng], popup=location).add_to(myMap)
+    myMap = folium.Map(location=[lat, lng],  zoom_start=9)
+    folium.Marker([lat, lng], popup=location, tooltip='Etho telecome').add_to(myMap)
     myMap.save("location.html")
 
     context = {
+        'continent': continent,
         'location': location,
         'provider_name': provider_name,
         'lat': lat,
         'lng': lng,
+        'timezone': timezone,
+        'callingcode': callingcode,
     }
-    return render(request, 'home.html', context)
+    return render(request, 'location.html', context)
