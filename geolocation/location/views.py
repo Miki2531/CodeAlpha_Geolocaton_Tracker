@@ -32,7 +32,7 @@ def phone_number(request):
 
     myMap = folium.Map(location=[lat, lng],  zoom_start=9)
     folium.Marker([lat, lng], popup=location, tooltip='Etho telecome').add_to(myMap)
-    myMap.save("location.html")
+    # myMap.save("location.html")
 
     context = {
         'continent': continent,

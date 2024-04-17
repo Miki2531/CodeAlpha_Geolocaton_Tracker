@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_8d5048e6189fc4f7edab78e898c9171d {
+                #map_a284e0cb3e7b2946a04e2aeef0a4925f {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -37,22 +37,21 @@
         
 </head>
 <body>
-    <h1>Phone Details</h1>
-    <p><strong>Continent:</strong> {{ continent }}</p>
-    <p><strong>Location:</strong> {{ location }}</p>
-    <p><strong>Service Provider:</strong> {{ provider_name }}</p>
-    <p><strong>Callingcode:</strong> {{ callingcode }}</p>
-    <p><strong>Time zone:</strong> {{ timezone }}</p>
+            <h1>Phone Details</h1>
+            <p><strong>Continent:</strong> {{ continent }}</p>
+            <p><strong>Location:</strong> {{ location }}</p>
+            <p><strong>Service Provider:</strong> {{ provider_name }}</p>
+            <p><strong>Callingcode:</strong> {{ callingcode }}</p>
+            <p><strong>Time zone:</strong> {{ timezone }}</p>
     
-    
-            <div class="folium-map" id="map_8d5048e6189fc4f7edab78e898c9171d" ></div>
+            <div class="folium-map" id="map_a284e0cb3e7b2946a04e2aeef0a4925f" ></div>
         
 </body>
 <script>
     
     
-            var map_8d5048e6189fc4f7edab78e898c9171d = L.map(
-                "map_8d5048e6189fc4f7edab78e898c9171d",
+            var map_a284e0cb3e7b2946a04e2aeef0a4925f = L.map(
+                "map_a284e0cb3e7b2946a04e2aeef0a4925f",
                 {
                     center: [10.2116702, 38.6521203],
                     crs: L.CRS.EPSG3857,
@@ -66,34 +65,42 @@
 
         
     
-            var tile_layer_b1b23a172f26bc39833ecb8043513116 = L.tileLayer(
+            var tile_layer_238f0b046d329255ce2ee3626c703a70 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
         
     
-            tile_layer_b1b23a172f26bc39833ecb8043513116.addTo(map_8d5048e6189fc4f7edab78e898c9171d);
+            tile_layer_238f0b046d329255ce2ee3626c703a70.addTo(map_a284e0cb3e7b2946a04e2aeef0a4925f);
         
     
-            var marker_2739bb6948c158f9d046cd7bb5b312b0 = L.marker(
+            var marker_c1114929578c65eb1139764ebfa4667d = L.marker(
                 [10.2116702, 38.6521203],
                 {}
-            ).addTo(map_8d5048e6189fc4f7edab78e898c9171d);
+            ).addTo(map_a284e0cb3e7b2946a04e2aeef0a4925f);
         
     
-        var popup_13a9e39f0540c77e53e3a482ad1e1018 = L.popup({"maxWidth": "100%"});
+        var popup_a1e8400471079f02a3e900865f72d6d9 = L.popup({"maxWidth": "100%"});
 
         
             
-                var html_cce8604618a3f006e630f033b30eb131 = $(`<div id="html_cce8604618a3f006e630f033b30eb131" style="width: 100.0%; height: 100.0%;">Ethiopia</div>`)[0];
-                popup_13a9e39f0540c77e53e3a482ad1e1018.setContent(html_cce8604618a3f006e630f033b30eb131);
+                var html_04d79b5cb54f610615c421d14d43b3be = $(`<div id="html_04d79b5cb54f610615c421d14d43b3be" style="width: 100.0%; height: 100.0%;">Ethiopia</div>`)[0];
+                popup_a1e8400471079f02a3e900865f72d6d9.setContent(html_04d79b5cb54f610615c421d14d43b3be);
             
         
 
-        marker_2739bb6948c158f9d046cd7bb5b312b0.bindPopup(popup_13a9e39f0540c77e53e3a482ad1e1018)
+        marker_c1114929578c65eb1139764ebfa4667d.bindPopup(popup_a1e8400471079f02a3e900865f72d6d9)
         ;
 
         
     
+    
+            marker_c1114929578c65eb1139764ebfa4667d.bindTooltip(
+                `<div>
+                     Etho telecome
+                 </div>`,
+                {"sticky": true}
+            );
+        
 </script>
 </html>
